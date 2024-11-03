@@ -1,0 +1,21 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/slf0Dev/Ocerium_Project/main/Library.lua"))()
+Window = Library.Main("Gato's Lagger","LeftShift") -- change "LeftAlt" to key that you want will hide gui
+
+-- tab
+
+local Tab = Window.NewTab("Server Lagger")
+local Section = Tab.NewSection("(Undetectable)")
+local Button = Section.NewButton("Start (Spam)",function()
+while wait() do
+
+game:GetService("ReplicatedStorage"):WaitForChild("GlovelFunc"):InvokeServer()
+end
+end)
+local Button = Section.NewButton("AntiLag",function()
+local vfxListener = game.Players.LocalPlayer.PlayerScripts:FindFirstChild("VFXListener")
+    if vfxListener then
+        for _, v in pairs(vfxListener:GetChildren()) do
+            v:Destroy()
+        end
+    end
+end)
